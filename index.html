@@ -17,8 +17,11 @@
             height: 45vh;
         }
         #gecVideo {
-            min-width: 100vw;
-            min-height: 100vh;
+            position: fixed;
+            min-width: 100%;
+            min-height: 100%;
+            right: 0;
+            bottom: 0;
         }
     </style>
 </head>
@@ -56,7 +59,7 @@
 
         function initializeGec() {
             document.body.innerHTML = "";
-            document.body.innerHTML = `<iframe id="gecVideo" width="560" height="315" src="https://www.youtube.com/embed/UtfkrGRK8wA?controls=0&amp;start=42" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`;
+            document.body.innerHTML = `<video id="gecVideo" src="https://www.youtube.com/embed/UtfkrGRK8wA?controls=0&amp;start=42" autoplay></video>`;
         }
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
