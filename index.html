@@ -52,7 +52,22 @@
                 document.getElementById("counter").innerHTML = counter;
             }    
         })
+        unpressed.addEventListener("touchstart", () => {
+            unpressed.style.display = "none";
+            pressed.style.display = "block";
+            counter++;
+            if (counter == 100) {
+                initializeGec();
+            } else{ 
+
+                document.getElementById("counter").innerHTML = counter;
+            }    
+        })
         window.addEventListener("mouseup", () => {
+            unpressed.style.display = "block";
+            pressed.style.display = "none";
+        })
+        window.addEventListener("touchend", () => {
             unpressed.style.display = "block";
             pressed.style.display = "none";
         })
