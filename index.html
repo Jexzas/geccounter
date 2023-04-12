@@ -38,19 +38,26 @@
     </div>
 
     <script>
+        let touchDevice = false;
+        window.addEventListener("touchstart", () => {
+            touchDevice = true;
+        })
         let counter = 0;
         let pressed = document.getElementById('pressed');
         let unpressed = document.getElementById('unpressed');
         unpressed.addEventListener("mousedown", () => {
-            unpressed.style.display = "none";
-            pressed.style.display = "block";
-            counter++;
-            if (counter == 100) {
-                initializeGec();
-            } else{ 
+            if (!touchDevice) {
+                unpressed.style.display = "none";
+                pressed.style.display = "block";
+                counter++;
+                if (counter == 100) {
+                    initializeGec();
+                } else{ 
 
-                document.getElementById("counter").innerHTML = counter;
-            }    
+                    document.getElementById("counter").innerHTML = counter;
+                }   
+            }
+  
         })
         unpressed.addEventListener("touchstart", () => {
             unpressed.style.display = "none";
